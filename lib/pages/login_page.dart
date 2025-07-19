@@ -2,19 +2,19 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yuklid_flutter_frontend/providers/auth_provider.dart';
-import 'package:yuklid_flutter_frontend/screens/register_screen.dart';
+import 'package:yuklid_flutter_frontend/pages/register_page.dart';
 
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginPageState extends State<LoginPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -104,7 +104,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => const RegisterScreen(),
+                    builder: (_) => const RegisterPage(),
                   ),
                 ),
                 child: const Text('Do not have an account? Register'),

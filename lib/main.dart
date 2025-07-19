@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yuklid_flutter_frontend/providers/auth_provider.dart';
-import 'package:yuklid_flutter_frontend/screens/auth_wrapper.dart';
+import 'package:yuklid_flutter_frontend/pages/auth_wrapper.dart';
 
 void main() {
   runApp(

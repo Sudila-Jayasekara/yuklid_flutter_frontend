@@ -6,16 +6,16 @@ import '../models/question.dart';
 import '../providers/auth_provider.dart';
 import '../services/user_service.dart';
 import '../widgets/mcq_widgets.dart';
-import 'login_screen.dart';
+import 'login_page.dart';
 
-class QuestionScreen extends StatefulWidget {
-  const QuestionScreen({super.key});
+class QuestionPage extends StatefulWidget {
+  const QuestionPage({super.key});
 
   @override
-  QuestionScreenState createState() => QuestionScreenState();
+  QuestionPageState createState() => QuestionPageState();
 }
 
-class QuestionScreenState extends State<QuestionScreen> {
+class QuestionPageState extends State<QuestionPage> {
   late Future<Question> _questionFuture;
 
   @override
@@ -46,7 +46,7 @@ class QuestionScreenState extends State<QuestionScreen> {
             icon: const Icon(Icons.logout),
             onPressed: () {
               authProvider.logout();
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const LoginScreen()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const LoginPage()));
             },
           ),
         ],
@@ -62,7 +62,7 @@ class QuestionScreenState extends State<QuestionScreen> {
               } else if (snapshot.hasError) {
                 if (snapshot.error.toString().contains('Unauthorized')) {
                   authProvider.logout();
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const LoginScreen()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const LoginPage()));
                   return const SizedBox.shrink();
                 }
                 return Center(child: Text('Error: ${snapshot.error.toString().replaceFirst('Exception: ', '')}'));

@@ -2,10 +2,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:yuklid_flutter_frontend/screens/question_screen.dart';
+import 'package:yuklid_flutter_frontend/pages/question_page.dart';
 
 import '../providers/auth_provider.dart';
-import 'login_screen.dart';
+import 'login_page.dart';
 
 class AuthWrapper extends StatelessWidget {
   const AuthWrapper({super.key});
@@ -20,9 +20,9 @@ class AuthWrapper extends StatelessWidget {
           return const Scaffold(body: Center(child: CircularProgressIndicator()));
         }
         if (snapshot.hasData && snapshot.data != null) {
-          return const QuestionScreen();
+          return const QuestionPage();
         }
-        return const LoginScreen();
+        return const LoginPage();
       },
     );
   }
